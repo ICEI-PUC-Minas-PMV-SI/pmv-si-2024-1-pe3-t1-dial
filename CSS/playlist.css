@@ -1,0 +1,624 @@
+/*========Google Fonts - Petrona========*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap');
+/*=========Google Fonts - Inter=========*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/*===================== VARIAVEIS CSS ===========================*/
+:root {
+    --header-height: 3rem;
+
+    /*===================== CORES ===========================*/
+    --hue-color: 338;
+    --black-color: hsl(var(--hue-color), 0%, 2%);
+    --nav-color: #1B1B1B;
+    --title-color: #fff;
+    --text-color: hsl(var(--hue-color), 0%, 75%);
+    --text-color-alt: #FF1467;
+    --button-color: #332F2F;
+    --text-gradient: linear-gradient(hsl(var(--hue-color), 26%, 39%), hsl(var(--hue-color), 4%, 8%));
+    --background: linear-gradient(180deg, rgba(209,21,85,1) 0%, rgba(47,19,29,1) 50%, rgba(70,4,26,1) 100%);
+
+    /*================= FONTES E TIPOGRAFIA ===================*/
+    --primary-font: "Petrona", serif;
+    --secundary-font: "Inter", sans-serif;
+
+
+    /*================= GROSSURA DA FONTE ===================*/
+
+
+    /*================= MARGENS ===================*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+
+    /*================= Z-INDEX ===================*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+}
+
+/*================= TIPOGRAFIA RESPONSIVA ===================*/
+@media screen and (min-width: 968px) {
+    :root{
+        --bigger-font-size: 3.5rem;
+        --big-font-size: 2.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+@media screen and (max-width: 340px) {
+    :root{
+        --big-font-size: 1rem;
+        --h2-font-size: .938rem;
+        --h3-font-size: .813rem;
+        --normal-font-size: .738rem;
+        --small-font-size: .613rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+
+
+/*================= BASE ===================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--secundary-font);
+    font-size: var(--normal-font-size);
+    background: var(--black-color);
+    color: var(--text-color-alt);
+}
+
+h1, h2, h3, p {
+    color: var(--title-color);
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 14px;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*================= CLASSES REUTILIZAVEIS ===================*/
+.section {
+    padding: 10rem 4rem;
+}
+
+
+
+/*================= LAYOUT ===================*/
+.container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+}
+.grid {
+    display: grid;
+}
+.content {
+    grid-template-columns: 70% 30%;
+    column-gap: 1rem;
+}
+
+/*================= HEADER ===================*/
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--nav-color);
+}
+/*================= NAV ===================*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__logo {
+    display: flex;
+    width: 9rem;
+}
+
+.nav__toggle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: fixed;
+        background-color: var(--nav-color);
+        top: -100%;
+        left: 0;
+        width: 100%;
+        padding: 4rem 0 3rem;
+        transition: .6s;
+    }
+    .user i{
+        color: var(--text-color-alt);
+        border: solid 1px var(--text-color-alt);
+        border-radius: 20px;
+        padding: 4px;
+        transition: all 0.3s ease;
+    }
+
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.nav__link {
+    color: white;
+    font-size: var(--h2-font-size);
+    text-transform: uppercase;
+    font-weight: var(--font-semi-bold);
+
+}
+.nav__link:hover {
+    background: var(--text-color-alt);
+    color: transparent;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.nav__user-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.user i {
+    cursor: pointer;
+    color: var(--text-color-alt);
+    border: 1px solid var(--text-color-alt);
+    border-radius: 50px;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+.user i:hover, button:hover {
+    background-color: var(--text-color-alt);
+    color: var(--text-color);
+}
+button {
+    display: inline-block;
+    padding: 9px 25px;
+    background: var(--button-color);
+    border: 1px solid var(--text-color-alt);
+    color: var(--text-color-alt);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav__close {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/*== mostrar menu ==*/
+.show-menu {
+    top: 0;
+}
+
+
+/*============= MEDIA QUERIES ===============*/
+/* Small Devices */
+@media screen and (max-width: 340px) {
+    .container {
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+    }
+}
+
+/* Medium Devices */
+@media screen and (min-width: 576px) {
+    .footer__container {
+        grid-template-columns: .4fr .6fr .6fr 2fr;
+    }
+    .footer__logo {
+        width: 5rem;
+    }
+    
+}
+
+@media screen and (min-width: 767px) {
+    body {
+        margin: 0;
+    }
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+    .nav__list {
+        flex-direction: row;
+        column-gap: 3.5rem;
+    }
+    .nav__link {
+        font-size: var(--normal-font-size);
+        text-transform: initial;
+        color: var(--title-color);
+    }
+    .nav__toggle, .nav__close {
+        display: none;
+    }
+    .footer__container {
+        grid-template-columns: .4fr .7fr .7fr 1fr;
+    }
+}
+
+/* Large Devices */
+@media screen and (min-width: 1024px) {
+    .container {
+        margin-left: 4rem;
+        margin-right: 1rem;
+        max-width: 95vw;
+    }
+    .nav {
+        justify-content: end;
+    }
+    .nav__logo {
+        margin-right: auto;
+    }
+    .nav__menu {
+        margin-right: 2rem;
+    }
+    .footer__container {
+        padding-top: 3rem;
+    }
+    .footer__copy {
+        margin-top: 9rem;
+    }
+    
+}
+
+/*============= PLAYLIST =================*/
+
+.catalog__container, .player__container {
+    background: var(--background);
+    border-radius: 10px;
+}
+.catalog {
+    grid-template-columns: 18% 82%;
+    column-gap: 3rem;
+    margin-bottom: 2rem;
+}
+.catalog__container {
+    padding: 2rem;
+}
+.albuns__img {
+    width: 128px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 17px;
+    overflow: hidden;
+}
+.albuns__img img {
+    width: 64px;
+    border: 1px solid black;
+}
+.play__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 4px;
+}
+.play__info h2 {
+    letter-spacing: 2px;
+}
+.play__info .disc {
+    list-style-type: disc;
+    color: var(--title-color);
+}
+.username {
+    display: flex;
+}
+.username p {
+    margin-right: 36px;
+}
+
+/*=========== LISTA DE MÚSICAS ============*/
+.catalog__playlist {
+    grid-auto-flow: row;
+    gap: 17px;
+    width: 100%;
+}
+.list__header {
+    display: flex;
+    border-bottom: 1px solid #5B5B5B;
+}
+.list__header .title {
+    margin-left: 7rem;
+}
+.list__songs ol {
+    list-style-type: none;
+    counter-reset: apples;
+
+    color: #ADADAD;
+    display: grid;
+    grid-auto-rows: 20%;
+}
+.list__songs li {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2% 80% 15%;
+}
+.list__songs li::before {
+    content: counter(apples);
+    counter-increment: apples;
+    font-weight: bold;
+    font-size: 16px;
+}
+.info__songs {
+    display: flex;
+    align-items: center;
+}
+.info__songs img {
+    width: 71px;
+    padding: 7px;
+    border-radius: 14px;
+}
+.info__title {
+    margin-left: 30px;
+}
+.list__songs .time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/*============= PLAYER =================*/
+.player__container {
+    display: flex;
+    flex-direction: column;
+    padding: 17px;
+    height: 28vw;
+    place-items: center;
+}
+.player__container .player__album {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 80%;
+}
+.player__info .info__content {
+    display: flex;
+    justify-content: space-between;
+}
+.player__info .info__music {
+    display: flex;
+    align-items: center;
+}
+.info__music p {
+    margin-right: 2rem;
+}
+.info__music span {
+    font-size: 13px;
+    color: var(--text-color);
+}
+.info__content .icons a {
+    color: var(--text-color);
+}
+.info__content .icons a:hover {
+    color: var(--text-color-alt);
+}
+
+/*======================== FOOTER =============================*/
+.footer {
+    background: var(--black-color);
+}
+.footer__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 2rem;
+}
+.footer__logo {
+    width: 7rem;
+}
+.footer__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+.footer__link {
+    color: var(--text-color);
+}
+.footer__link:hover {
+    color: var(--primary-color);
+}
+.footer__form {
+    display: flex;
+    column-gap: .5rem;
+    background-color: var(--nav-color);
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    margin-bottom: var(--mb-2);
+}
+.footer__input {
+    background-color: var(--nav-color);
+    width: 90%;
+    color: white;
+    border: none;
+}
+.footer__input::placeholder {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    font-family: var(--secundary-font);
+}
+.button__flex {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .75rem;
+}
+.footer__social {
+    display: flex;
+    column-gap: 1.25rem;
+}
+.footer__social-link {
+    display: inline-flex;
+    color: var(--text-color);
+    background-color: var(--nav-color);
+    padding: .5rem;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
+.footer__social-link:hover {
+    background-color: var(--black-color);
+}
+.footer__copyright, .footer__link-copy {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color);
+}
+
+/*=============== SCROLL BAR ================*/
+::-webkit-scrollbar {
+    width: .60rem;
+    border-radius: .5rem;
+    background-color: #1B1B1B;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--text-color-alt);
+    border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--title-color);
+}
+
+@media screen and (max-width: 600px) {
+    .card__container .slider__wrapper {
+        grid-auto-columns: calc((100% / 4) - 8px);
+    }
+}
+  
+/*============= TOP ALBUNS ============*/
+
+
+/* ======================= VIBES =============================*/
+
+
+/*======================== FOOTER =============================*/
+.footer {
+    background: var(--black-color);
+}
+.footer__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 2rem;
+}
+.footer__logo {
+    width: 7rem;
+}
+.footer__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+.footer__link {
+    color: var(--text-color);
+}
+.footer__link:hover {
+    color: var(--primary-color);
+}
+.footer__form {
+    display: flex;
+    column-gap: .5rem;
+    background-color: var(--nav-color);
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    margin-bottom: var(--mb-2);
+}
+.footer__input {
+    background-color: var(--nav-color);
+    width: 90%;
+    color: white;
+    border: none;
+}
+.footer__input::placeholder {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    font-family: var(--secundary-font);
+}
+.button__flex {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .75rem;
+}
+.footer__social {
+    display: flex;
+    column-gap: 1.25rem;
+}
+.footer__social-link {
+    display: inline-flex;
+    color: var(--text-color);
+    background-color: var(--nav-color);
+    padding: .5rem;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
+.footer__social-link:hover {
+    background-color: var(--black-color);
+}
+.footer__copyright, .footer__link-copy {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color);
+}
+
+/*=============== SCROLL BAR ================*/
+::-webkit-scrollbar {
+    width: .60rem;
+    border-radius: .5rem;
+    background-color: #1B1B1B;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--text-color-alt);
+    border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--title-color);
+}

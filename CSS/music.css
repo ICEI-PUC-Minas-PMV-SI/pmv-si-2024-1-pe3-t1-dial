@@ -1,0 +1,460 @@
+/*========Google Fonts - Petrona========*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap');
+/*=========Google Fonts - Inter=========*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/*===================== VARIAVEIS CSS ===========================*/
+:root {
+    --header-height: 3rem;
+
+    /*===================== CORES ===========================*/
+    --bg-black: #000;
+    --bg-gray: #121212;
+    --bg-violet: linear-gradient(0deg, rgba(19,19,19,1) 22%, rgba(70,4,26,1) 59%);
+    --text: #FFFFFF;
+    --text-alt: #CDCDCD;
+    --sidebar-content: #252525;
+
+    /*================= FONTES E TIPOGRAFIA ===================*/
+    --primary-font: "Petrona", serif;
+    --secundary-font: "Inter", sans-serif;
+    --biggest-font-size: 5rem;
+    --bigger-font-size: 3.5rem;
+    --big-font-size: 2.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --text-line-height: 2rem;
+
+    /*================= GROSSURA DA FONTE ===================*/
+    --font-small: 300;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*================= MARGENS ===================*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+
+    /*================= Z-INDEX ===================*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+}
+
+/*================= TIPOGRAFIA RESPONSIVA ===================*/
+@media screen and (min-width: 968px) {
+    :root{
+        --bigger-font-size: 3.5rem;
+        --big-font-size: 2.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+@media screen and (max-width: 340px) {
+    :root{
+        --big-font-size: 1rem;
+        --h2-font-size: .938rem;
+        --h3-font-size: .813rem;
+        --normal-font-size: .738rem;
+        --small-font-size: .613rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+/*================= BASE ===================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-alt);
+    font-family: "Inter", sans-serif;
+    background-color: #000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--text-alt);
+}
+i {
+    font-size: 15px;
+}
+h1 {
+    font-size: 1.5rem;
+    color: var(--text);
+}
+h2 {
+    font-size: 1rem;
+}
+p {
+    font-size: 0.875rem;
+}
+
+/*================= CLASSES REUTILIZAVEIS ===================*/
+.flex {
+    display: flex;
+}
+.bg__black {
+    background-color: var(--bg-black);
+}
+
+.invert {
+    filter: invert(1);
+}
+.bg__gray {
+    background-color: var(--bg-gray);
+}
+.rounded {
+    border-radius: 8px;
+}
+.mb-1 {
+    margin: 7px;
+}
+.pd-1 {
+    padding: 14px 12px;
+}
+.pd-2 {
+    padding: 17px 16px;
+}
+
+
+/*================= LAYOUT ===================*/
+.border {
+    border: 1px solid red;
+    margin: 3px;
+}
+.sidebar {
+    width: 23vw;
+    padding: 1px;
+    min-height: 0;
+    z-index: 4;
+}
+.content {
+    width: 77vw;
+    margin: 9px 0;
+    min-height: 0;
+}
+.justify__center {
+    justify-content: center;
+}
+.items__center {
+    align-items: center;
+}
+
+
+/*================= SIDEBAR ===================*/
+
+.nav__logo {
+    width: 5.9rem;
+    margin-left: 12px;
+    padding-bottom: 4px;
+}
+
+.nav ul li {
+    width: .7rem;
+    display: flex;
+    gap: .8rem;
+    padding: 10px 12px;
+    font-weight: bold;
+}
+.library {
+    min-height: 76vh;
+    position: relative;
+}
+.lb__head {
+    display: flex;
+    gap: .8rem;
+    font-weight: bold;
+    align-items: center;
+    padding: 4px 8px;
+}
+.lb__footer {
+    display: flex;
+    font-size: .8rem;
+    color: var(--text);
+    gap: .7rem;
+    position: absolute;
+    bottom: 0;
+    padding: 0 24px;
+}
+/* biblioteca */
+.list__songs {
+    height: 15.5rem;
+    overflow: auto;
+    margin: 30px 0px;
+}
+.hamburger {
+    display: none;
+}
+.sidebar .close {
+    display: none;
+}
+.hamburger__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 27px;
+}
+
+.list__songs ul {
+    padding: 0 3px;
+}
+.list__songs ul li i {
+    display: flex;
+
+}
+.list__songs ul li {
+    list-style-type: decimal;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    padding: 13px;
+    margin: 12px 0;
+    border-radius: 5px;
+    border: 1px solid var(--text-alt);
+    justify-content: space-between;
+    align-items: center;
+}
+.info__songs {
+    font-size: 11px;
+}
+.playnow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.playnow span {
+    display: flex;
+    font-size: 13px;
+    padding: 12px;
+}
+.list__songs::-webkit-scrollbar {
+    width: 5px;
+}
+.list__songs:hover::-webkit-scrollbar-thumb {
+    background-color: #5c5b5b;
+    border-radius: 6px;
+}
+.list__songs::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/*================= CONTEUDO MUSICA =================*/
+/* navbar */
+.content__header > * {
+    padding: 10px;
+;
+}
+.content__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    background: var(--bg-gray);
+    align-items: center;
+}
+
+.content__nav button {
+    background: var(--bg-gray);
+    color: var(--text-alt);
+    outline: 0;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+}
+.content__nav button:hover {
+    color: var(--text);
+}
+.head__btn > * {
+    margin: 0 10px;
+    background-color: var(--bg-gray);
+    color: var(--text-alt);
+    border-radius: 50%;
+    outline: 0;
+    border: 1px solid var(--text-alt);
+    cursor: pointer;
+}
+
+.btn__user i, .btn__not i {
+    font-size: 15px;
+    margin: 10px;
+}
+.btn__user:hover, .btn__not:hover {
+    background: var(--text);
+    color: var(--bg-black);
+}
+/* Playlist */
+.content__playlist {
+    padding: 0 16px;
+    position: relative;
+}
+.card__container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+.card__container::-webkit-scrollbar {
+    width: 12px;
+}
+.card__container:hover::-webkit-scrollbar-thumb {
+    background-color: #5c5b5b;
+    border-radius: 6px;
+}
+.card__container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.playlist__card {
+    width: 11rem;
+    padding: .8rem;
+    border-radius: 5px;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    min-block-size: 48px;
+    z-index: 0;
+    padding-block: 12px;
+    padding-inline: 12px;
+    --animation-speed: 300ms;
+    --animation-ease: ease;
+    --bg-inset-change-press: -4px;
+    cursor: pointer;
+
+}
+.playlist__card > * {
+    padding-top: .9rem;
+}
+.playlist__card img {
+    object-fit: contain;
+}
+
+.playlist__card:hover {
+
+}
+
+
+.play {
+    position: absolute;
+    top: 119px;
+    right: 17px;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+.play:hover{
+    opacity: 1;
+}
+.play i {
+    font-size: 2.3rem;
+    color: #00FF00;
+
+}
+/* playslist bar */
+.play__bar {
+    position: fixed;
+    margin-bottom: 40px;
+    bottom: 0;
+    width: 70vw;
+    padding: 7px;
+    filter: invert(1);
+    background: #dad5d5;
+    border-radius: 10px;
+    height: 40px;
+}
+.songs__btn {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.songs__btn img {
+    width: 13px;
+    cursor: pointer;
+}
+.seekbar {
+    height: 4px;
+    width: 98%;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 3px;
+    background: black;
+    cursor: pointer;
+}
+.circle {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    background-color: black;
+    position: relative;
+    bottom: 4px;
+    left: 0%;
+    transition: left 0.5s;
+}
+.infobar {
+    display: flex;
+    justify-content: space-between;
+}
+.song__info, .song__time {
+    color: #6c6c6c;
+    padding: 0 12px;
+}
+
+@media (max-width: 1400px) {
+    .sidebar {
+        position: absolute;
+        left: -120%;
+        transition: all .5s;
+        z-index: 1;
+        width: 19.5rem;
+        background-color: black;
+    }
+
+    .content {
+        width: 100vw;
+    }
+
+    .play__bar {
+        width: 98vw;
+    }
+    .hamburger {
+        display: flex;
+        width: 30px;
+    }
+    .sidebar .close img {
+        width: 20px;
+    }
+    .sidebar .close {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 23px;
+    }
+}
+
+
+
+
+
+
+
+
