@@ -2,12 +2,6 @@
 const navMenu = document.getElementById('nav-menu'),
         navToggle = document.getElementById('nav-toggle'),
         navClose = document.getElementById('nav-close');
-        $( "#target" ).submit(function( event ) {
-            console.log('desabilita');
-            $("#botao").prop("disabled", true);
-            event.preventDefault();
-        });
-
 /* abrir */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
@@ -66,11 +60,6 @@ sr.reveal(`.home__img`, {delay: 900, origin: 'bottom'})
 sr.reveal(`.founder__article`, {origin: 'left', interval: 100})
 sr.reveal(`.founders__text`, {origin: 'right'})
 sr.reveal(`.footer, .carroussel`, {origin: 'bottom'})
-sr.reveal(`.footer__logo, .footer__content, footer__copyright`, {origin: 'top', interval: 100})   
-$( "#target" ).submit(function( event ) {
-    console.log('desabilita');
-    $("#botao").prop("disabled", true);
-    event.preventDefault();
-});
+sr.reveal(`.footer__logo, .footer__content, footer__copyright`, {origin: 'top', interval: 100})
     
   

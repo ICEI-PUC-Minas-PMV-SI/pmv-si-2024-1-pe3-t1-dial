@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="x-icon" href="media/icon-tab.png">
     <title>Dial - The music world</title>
-    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/be8ae1a106.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/login-style.css">
-    <!--JavaScript-->
-    <script src="js/login.js"></script>
+    <link rel="stylesheet" href="CSS/register-style.css">
     <!-- Scroll Reveal -->
     <script src="js/scrollreveal.min.js"></script>
+    <!-- JavaScript -->
+    <script src="js/register.js"></script>
 </head>
 <body>
     <div class="page__container">
@@ -21,10 +20,10 @@
                     <a href="home.html" id="logo__link">
                         <img src="media/dial-logo.svg" id="logo" alt="">
                     </a>
-                    <h1>Fazer Login</h1>
+                    <h1>Criar Conta</h1>
                     <p>
-                        "Não tem uma conta?"
-                        <a href="register.html">Cadastre-se</a>
+                        Já tem uma conta?
+                        <a href="login.html">Fazer Login</a>
                     </p>
                 </header>
                 <div id="kc-content">
@@ -63,31 +62,41 @@
                             </div>
                             <div class="form__row">
                                 <div class="form-group">
-                                    <input value name="password" type="password" aria-required autocomplete="off" placeholder=" " id="password" class="input-field password" required>
+                                    <input id="password" placeholder=" " class="input-field password" value="" name="password" type="password" autocomplete="off" aria-invalid="" aria-required="" oninput="handleRegistrationPasswordChanged()" aria-describedby="input-error-password">
                                     <label for="username" class="form-label">Senha</label>
                                     <button class="password-visibility-toggle" type="button" onclick="toggleShowPassword('password', 'show-password-icon', 'hide-password-icon')">
                                         <img id="show-password-icon" class="icon" src="media/eye-primary-icon-color.svg" alt="show password">
                                         <img id="hide-password-icon" class="icon" src="media/hidden-eye-secondary-icon-color.svg" style="display: none;" alt="hide password">
                                     </button>
+                                    <input id="password-confirm" name="password-confirm" type="hidden" value="">
                                 </div>
                             </div>
+                            <ul class="passwordRequeriments">
+                                <li class="passwordRequeriments-item">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path class="password-list-icon" fillrule="evenodd" clipe-rule="evenodd" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                                    No mínimo 8 caracteres
+                                </li>
+                                <li class="passwordRequeriments-item">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path class="password-list-icon" fillrule="evenodd" clipe-rule="evenodd" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                                    No mínimo um número (0-9)
+                                </li>
+                                <li class="passwordRequeriments-item">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path class="password-list-icon" fillrule="evenodd" clipe-rule="evenodd" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                                    No mínimo um caractere especial
+                                </li>
+                            </ul>
                             <div id="kc-form-buttons" class="form__row">
                                 <button class="button primary fullWidth" name="login" id="kc-login" type="submit">
-                                    <span class="button__inner" tabindex="-1">Fazer Login</span>
+                                    <span class="button__inner" tabindex="-1">Continuar</span>
                                 </button>
                             </div>
 
                         </form>
                     </div>
-                    <ul class="page__links">
-                        <li class="link__item">
-                            <a href="">Esqueceu a senha?</a>
-                        </li>
-                    </ul>
                     <p class="info__text" id="social__signup">
-                        Ao clicar em 'Continuar com a Google/Apple' acima, você declara que leu e concorda com nossos 
+                        Ao criar uma conta, você concorda com nossos 
                         <a class="target-blank" href="#" target="_blank">Termos e Condições Gerais</a>
-                         e leu e confirma a 
+                         e leu e aceitou a 
                         <a class="target-blank" href="#" target="_blank">Política de Privacidade</a>.
                     </p>
                     <p class="info__text" id="social__signup">
@@ -115,12 +124,12 @@
             </div>
         </div>
         <div class="image__container">
-            <img class="artist__img" src="media/login_img.jpeg" alt="">
+            <img class="artist__img" src="media/register_img.jpeg" alt="">
             <div class="text">
                 <p>* Imagem criada por Inteligência Artificial</p>
             </div>
-
         </div>
     </div>
+    
 </body>
 </html>

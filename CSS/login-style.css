@@ -1,0 +1,373 @@
+/*========Google Fonts - Petrona========*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap');
+/*=========Google Fonts - Inter=========*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/*===================== VARIAVEIS CSS ===========================*/
+:root {
+    --header-height: 3rem;
+
+    /*===================== CORES ===========================*/
+    --hue-color: 338;
+    --black-color: hsl(var(--hue-color), 0%, 2%);
+    --nav-color: #1B1B1B;
+    --title-color: #fff;
+    --text-color: hsl(var(--hue-color), 0%, 75%);
+    --text-color-alt: #FF1467;
+    --button-color: #332F2F;
+    --text-gradient: linear-gradient(hsl(var(--hue-color), 26%, 39%), hsl(var(--hue-color), 4%, 8%));
+    --background: linear-gradient(180deg, rgba(209,21,85,1) 0%, rgba(47,19,29,1) 50%, rgba(70,4,26,1) 100%);
+
+    /*================= FONTES E TIPOGRAFIA ===================*/
+    --primary-font: "Petrona", serif;
+    --secundary-font: "Inter", sans-serif;
+
+
+    /*================= GROSSURA DA FONTE ===================*/
+
+
+    /*================= MARGENS ===================*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+
+    /*================= Z-INDEX ===================*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+}
+
+/*================= TIPOGRAFIA RESPONSIVA ===================*/
+@media screen and (min-width: 968px) {
+    :root{
+        --bigger-font-size: 3.5rem;
+        --big-font-size: 2.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+@media screen and (max-width: 340px) {
+    :root{
+        --big-font-size: 1rem;
+        --h2-font-size: .938rem;
+        --h3-font-size: .813rem;
+        --normal-font-size: .738rem;
+        --small-font-size: .613rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+
+
+/*================= BASE ===================*/
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--black-color);
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    line-height: 1.66;
+    color: var(--title-color);
+}
+h1 {
+    line-height: 1.1;
+    font-family: var(--primary-font);
+}
+p {
+    margin: 0 0 0.625rem 0;
+    color: var(--title-color);
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: underline;
+    margin-bottom: 0;
+    background-color: transparent;
+}
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+form {
+    margin: 0;
+}
+button, input, select, textarea {
+    font: inherit;
+    line-height: inherit;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*=================== LAYOUT ==========================*/
+.page__container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.login__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 64px 0 64px;
+    width: 50%;
+}
+.image__container {
+    width: 50%;
+    min-height: 100vh;
+}
+
+/*=================== LOGIN ==========================*/
+.form__card {
+    padding: 0;
+    width: 100%;
+    max-width: 416px;
+}
+.form__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+
+}
+#logo {
+    height: 44px;
+    margin-bottom: 0;
+}
+.form__header #logo {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
+.form__header h1 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 500;
+    letter-spacing: -0.02rem;
+    text-align: left;
+}
+.socialLoginButton {
+    margin-bottom: 1rem;
+}
+button.primary.social__button {
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #747775;
+    outline: none;
+    overflow: hidden;
+}
+.button.primary {
+    color: var(--black-color);
+    background-color: var(--title-color);
+}
+.button.fullWidth {
+    width: 100%;
+}
+.button {
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+    hyphens: auto;
+    min-height: 3.5rem;
+    min-width: 4.75rem;
+    border: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+    color: #0F0F0F;
+    background: #FFFFFF;
+}
+.social-button-inner {
+    padding: 0.625rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-button-inner img {
+    min-width: 20px;
+    margin-right: 0.75rem;
+}
+.socialLoginDivider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    padding: 1.5rem 0;
+}
+.socialLine {
+    flex: 1;
+    background-color: rgba(207,214,229,.16078);
+    height: 1px;
+}
+.socialLoginDividerText {
+    color: rgba(255,255,255,.72157);
+    margin: 0 0.5rem;
+}
+.kc-form {
+    margin-bottom: 1.5rem;
+}
+.form__row {
+    margin-bottom: 1rem;
+}
+.form-group {
+    display: block;
+    position: relative;
+    height: 100%;
+    cursor: inherit;
+    background-color: rgba(207, 214, 229, .16078);
+    cursor: text;
+    border: 1px solid transparent;
+}
+.form-group > input:not(:placeholder-shown) + .form-label, .form-group > input:-webkit-autofill + .form-label {
+    transform: translate3d(0px, -34.375%, 0px) scale(0.75);
+}
+.input-field {
+    box-sizing: border-box;
+    width: 100%;
+    font-family: var(--secundary-font);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--title-color);
+    background: transparent;
+    border: none;
+    padding: calc(1rem - 1px) 1rem;
+    outline: none;
+}
+.input-field:not([value=""]), .input-field:not(:placeholder-shown) {
+    padding-top: 1.5625rem;
+    padding-bottom: 0.4375rem;
+}
+.input-field.password {
+    padding-right: 3rem;
+}
+.form-label {
+    color: rgba(255, 255, 255, .72157);
+    position: absolute;
+    top: 1.08333rem;
+    left: 1rem;
+    line-height: 1.33333;
+    margin: 0px;
+    transform-origin: left top;
+    transition-property: max-width, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.645, 0.355, 1);
+    max-width: calc(100% - 2rem);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: inherit;
+}
+.password-visibility-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.icon {
+    width: 1.25rem;
+    height: 1rem;
+}
+.button__inner {
+    padding: 0.25rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.page__links { 
+    margin: 2rem 0;
+}
+.link__item {
+    margin-bottom: 1rem;
+}
+.info__text {
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-color);
+}
+.info__text:last-child {
+    margin-bottom: 0;
+}
+.info__text a {
+    color: var(--text-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+.footer__container {
+    border-top: None;
+    padding-top: 0;
+    margin-top: auto;
+    margin-left: 0;
+    max-width: 400px;
+    width: 100%;
+}
+.pickerTeam {
+    padding: 5rem 0 1.5rem 0;
+}
+.pickerTeam label {
+    display: inline-flex;
+    position: relative;
+    height: 2.5rem;
+}
+.pickerTeam select {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    box-sizing: border-box;
+    margin: 0 0 0 auto;
+    border: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    text-align-last: left;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+}
+.pickerTeam div {
+    position: absolute;
+    top: 0.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+    left: 0px;
+    right: auto;
+}
+
+
+/*=================== IMAGE CONTAINER ==========================*/
+.artist__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
