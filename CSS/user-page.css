@@ -312,7 +312,7 @@ button {
 
 .perfil {
     background: var(--nav-color);
-    width: 17rem;
+    width: 25rem;
     height: 10rem;
     border-radius: 10px;
     position: relative;
@@ -339,9 +339,14 @@ button {
 }
 
 .perfil__container .heart__icon {
+    cursor: pointer;
     width: 26px;
     height: 26px;
     margin-left: auto;
+}
+.heart__icon:hover {
+    fill: #f00;
+    transform: scale(1.2);
 }
 
 /*============= LIST PLAYLIST =================*/
@@ -349,7 +354,7 @@ button {
 .playlist {
     background: linear-gradient(180deg, rgba(149,1,53,1) 0%, rgba(29,0,10,1) 100%);
     border-radius: 10px;
-    width: 90%;
+    width: 56em;
 }
 
 .playlist .albuns__img {
@@ -405,7 +410,7 @@ button {
 .tocadas .list__songs ol {
     list-style-type: none;
     counter-reset: apples;
-    width: 70vw;
+    width: 52em;
     color: #ADADAD;
     display: grid;
     grid-auto-rows: 20%;

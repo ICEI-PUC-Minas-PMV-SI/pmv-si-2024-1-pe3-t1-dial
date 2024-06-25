@@ -61,5 +61,33 @@ sr.reveal(`.founder__article`, {origin: 'left', interval: 100})
 sr.reveal(`.founders__text`, {origin: 'right'})
 sr.reveal(`.footer, .carroussel`, {origin: 'bottom'})
 sr.reveal(`.footer__logo, .footer__content, footer__copyright`, {origin: 'top', interval: 100})
+
+
+/*============ CARROUSEL ======================*/
+
+const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5500,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  on: {
+    autoplayTimeLeft(s, time, progress) {
+      progressCircle.style.setProperty("--progress", 1 - progress);
+      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  }
+});
     
   

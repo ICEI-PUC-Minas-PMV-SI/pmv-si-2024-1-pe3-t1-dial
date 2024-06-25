@@ -7,6 +7,8 @@
     <title>Dial - The World of Music</title>
     <script src="https://kit.fontawesome.com/be8ae1a106.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/home-style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Scroll Reveal -->
     <script src="js/scrollreveal.min.js"></script>
 
@@ -24,7 +26,7 @@
                         <a href="music1.html" class="nav__link">Músicas</a>
                     </li>
                     <li class="nav__item">
-                        <a href="" class="nav__link">Notícias</a>
+                        <a href="#carrousel" class="nav__link">Notícias</a>
                     </li>
                 </ul>
                 <div class="nav__close" id="nav-close">
@@ -50,11 +52,14 @@
             <div class="home__container container grid">
                 <div class="home__data">
                     <div class="home__title">
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <h2>Lorem, <span>ipsum</span> dolor.</h2>
+                        <h1>Bem-vindo à nossa rede social</h1>
+                        <h2>de <span>música</span> personalizadas.</h2>
                     </div>
                     <div class="home__subtitle">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ducimus eveniet, explicabo atque neque omnis, veniam reiciendis deleniti earum tenetur fugiat quis minima accusamus officiis et iusto numquam veritatis labore amet itaque!</p>
+                        <p>Cadastra-se e junte-se a uma comunidade vibrante de entusiastas da música e compartilhe suas emoções através de uma ampla variedade de recursos interativos.</p>
+                    </div>
+                    <div class="homeBtn">
+                        <a href="music1.html">Experimente</a>
                     </div>
                 </div>
                 <div class="home__img">
@@ -68,56 +73,60 @@
                 <div class="founder__article grid">
                     <article class="founders__card">
                         <div class="founders__content">
-                            <img src="media/user.png" alt="" class="founders__img">
-                            <h3 class="founders__title">Dev1</h3>
-                            <span class="founders__description">Lorem ipsum dolor sit amet.</span>
+                            <img src="media/perfil_Andre_ramos.jfif" alt="" class="founders__img">
+                            <h3 class="founders__title">André Ramos</h3>
+                            <span class="founders__description">Web Developer</span>
                         </div>
                     </article>
                     <article class="founders__card">
                         <div class="founders__content">
-                            <img src="media/user.png" alt="" class="founders__img">
-                            <h3 class="founders__title">Dev2</h3>
-                            <span class="founders__description">Lorem ipsum dolor sit amet.</span>
+                            <img src="media/perfil_Guilherme_Lima.jfif" alt="" class="founders__img">
+                            <h3 class="founders__title">Guilherme Lima</h3>
+                            <span class="founders__description">Web Developer</span>
                         </div>
                     </article>
                     <article class="founders__card">
                         <div class="founders__content">
-                            <img src="media/user.png" alt="" class="founders__img">
-                            <h3 class="founders__title">Dev3</h3>
-                            <span class="founders__description">Lorem ipsum dolor sit amet.</span>
+                            <img src="media/perfil_Gustavo_Gino.jfif" alt="" class="founders__img">
+                            <h3 class="founders__title">Gustavo Gino</h3>
+                            <span class="founders__description">Web Developer</span>
                         </div>
                     </article>
                     <article class="founders__card">
                         <div class="founders__content">
-                            <img src="media/user.png" alt="" class="founders__img">
-                            <h3 class="founders__title">Dev4</h3>
-                            <span class="founders__description">Lorem ipsum dolor sit amet.</span>
+                            <img src="media/perfil_Nata_Gabriel.jpg" alt="" class="founders__img">
+                            <h3 class="founders__title">Natã Gabriel</h3>
+                            <span class="founders__description">Web Developer</span>
                         </div>
                     </article>
                     <article class="founders__card">
                         <div class="founders__content">
-                            <img src="media/user.png" alt="" class="founders__img">
-                            <h3 class="founders__title">Dev5</h3>
-                            <span class="founders__description">Lorem ipsum dolor sit amet.</span>
+                            <img src="media/perfil_Rhafael_Damiao.jfif" alt="" class="founders__img">
+                            <h3 class="founders__title">Rhafael Damião</h3>
+                            <span class="founders__description">Web Developer</span>
                         </div>
                     </article>
                     <article class="founders__card">
                         <div class="founders__content">
-                            <img src="media/user.png" alt="" class="founders__img">
-                            <h3 class="founders__title">Dev6</h3>
-                            <span class="founders__description">Lorem ipsum dolor sit amet.</span>
+                            <img src="media/perfil_Thiago_Oliveira.jpg" alt="" class="founders__img">
+                            <h3 class="founders__title">Thiago Oliveira</h3>
+                            <span class="founders__description">Web Developer</span>
                         </div>
                     </article>
                 </div>
 
                 <div class="founders__text">
-                    <p class="founders__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio magni inventore quas debitis quo dicta accusantium aspernatur, incidunt ratione quis sint consectetur culpa pariatur facilis, quae in neque fugiat. Quod vero earum fugit sapiente beatae et eveniet rem sequi labore doloremque nemo molestiae architecto, libero delectus. Odit id cupiditate esse?</p>
+                    <p class="founders__description">Somos uma equipe de seis talentosos desenvolvedores web apaixonados por tecnologia e inovação. Nossa jornada começou na Universidade PUC-MINAS, onde nos unimos para criar esta aplicação como parte do nosso projeto de graduação em Sistemas de Informação. <br>
+                        <br>
+                        Cada um de nós trouxe habilidades únicas e uma paixão compartilhada por resolver desafios complexos através da programação. Desde então, dedicamos horas incansáveis para desenvolver uma solução que não só atende às necessidades atuais, mas que também incorpora as mais recentes tendências e melhores práticas do setor. <br>
+                        <br>
+                        Estamos orgulhosos de apresentar esta aplicação, fruto não apenas de nosso esforço coletivo, mas também de nosso comprometimento em aprender, crescer e superar expectativas. Esperamos que você aproveite cada funcionalidade pensada com carinho e dedicação por nossa equipe.</p>
                 </div>
             </div>
         </section>
 
         <!--====================== CARROSSEL ===========================-->
-        <section class="carroussel" id="carroussel">
+        <!--<section class="carroussel" id="carroussel">
             <div id="slider">
                 <input type="radio" name="slider" id="s1" checked>
                 <input type="radio" name="slider" id="s2">
@@ -146,7 +155,82 @@
                     <h1><span>Lorem</span> Lorem ipsum dolor sit amet.</h1>
                 </label>
             </div>
+        </section>-->
+
+        <!--====================== CARROSSEL TWO ===========================-->
+
+        <section id="carrousel" class="carrousel" >
+            <div class="carrousel__container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="media/carrousel1.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/25/paul-mccartney-no-brasil-pre-venda-de-ingressos-esta-esgotada-venda-geral-comeca-amanha2.html" target="_blank">
+                            <p>Paul McCartney no Brasil: Pré-venda de ingressos está esgotada. Venda geral começa amanhã!</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel2.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/25/joss-stone-confirma-tres-shows-solo-no-brasil.html" target="_blank">
+                            <p>Joss Stone confirma três shows solo no Brasil</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel3.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/25/shifty-shellshock-vocalista-do-crazy-town-morre-aos-49-anos.html" target="_blank">
+                            <p>Shifty Shellshock, vocalista do Crazy Town, morre aos 49 anos</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel4.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/25/pela-primeira-vez-na-carreira-sabrina-carpenter-chega-ao-topo-da-parada-de-singles-dos-eua.html" target="_blank">
+                            <p>Pela primeira vez na carreira, Sabrina Carpenter chega ao topo da parada de singles dos EUA!</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel5.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/25/jennifer-lopez-surpreende-ao-ser-vista-viajando-de-classe-economica-em-um-voo-veja-as-fotos.html" target="_blank">
+                            <p>Jennifer Lopez surpreende ao ser vista viajando de classe econômica em um voo. Veja as fotos!</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel6.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/25/veja-a-integra-do-show-do-keane-no-pinkpop-festival-na-holanda.html" target="_blank">
+                            <p>Veja a íntegra do show do Keane no Pinkpop Festival na Holanda</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel7.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/25/weezer-celebra-os-30-anos-do-album-azul-com-performance-especial-nos-estudios-do-spotify-veja.html" target="_blank">
+                            <p>Weezer celebra os 30 anos do "Álbum Azul", com performance especial nos estúdios do Spotify. Veja!</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel8.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/24/katy-perry-aparece-de-surpresa-no-vogue-world-2024-e-esbanja-sensualidade-na-passarela-veja.html" target="_blank">
+                            <p>Katy Perry aparece de surpresa no Vogue World 2024 e esbanja sensualidade na passarela. Veja!</p>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="media/carrousel9.webp" alt="">
+                        <a href="https://www.vagalume.com.br/news/2024/06/24/bartender-confirma-versao-de-justin-timberlake-sobre-ter-tomado-so-um-drinque-antes-de-ser-preso.html" target="_blank">
+                            <p>Bartender confirma versão de Justin Timberlake sobre ter "tomado só um drinque" antes de ser preso</p>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="autoplay-progress">
+                        <svg viewBox="0 0 48 48">
+                          <circle cx="24" cy="24" r="20"></circle>
+                        </svg>
+                        <span></span>
+                    </div>
+                  </div>
+            </div>
         </section>
+
     </main>
     <!--====================== FOOTER ===========================-->
     <footer class="footer section">
@@ -178,7 +262,7 @@
                         <a href="" class="footer__link">Ajuda</a>
                     </li>
                     <li>
-                        <a href="cadastro.html" class="footer__link">Cadastro</a>
+                        <a href="register.html" class="footer__link">Cadastro</a>
                     </li>
                     <li>
                         <a href="" class="footer__link">Versões</a>
@@ -222,9 +306,11 @@
 
 
 
-
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!--Link JavaScript-->
     <script src="js/home.js"></script>
+
 
 </body>
 </html>
