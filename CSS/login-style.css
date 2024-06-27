@@ -153,9 +153,9 @@ img {
     height: 44px;
     margin-bottom: 0;
 }
-.form__header #logo {
+/*.form__header #logo {
     filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
-}
+}*/
 .form__header h1 {
     margin-top: 2rem;
     margin-bottom: 0;
