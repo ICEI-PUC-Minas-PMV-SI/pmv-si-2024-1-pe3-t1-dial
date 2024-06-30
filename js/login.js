@@ -1,27 +1,51 @@
-const $ = (elemento) => document.querySelector(elemento);
+/*============ MOSTRAR OU ESCONDER SENHA ================== */
+function toggleShowPassword(id, showIconId, hideIconId) {
+    const passwordElement = document.getElementById(id);
+    const type = passwordElement.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordElement.setAttribute('type', type);
+    const showPasswordIconElement = document.getElementById(showIconId);
+    const hidePasswordIconElement = document.getElementById(hideIconId);
+    if (type === 'text') {
+        hidePasswordIconElement.style.display = 'inline';
+        showPasswordIconElement.style.display = 'none';
+    } else {
+        showPasswordIconElement.style.display = 'inline';
+        hidePasswordIconElement.style.display = 'none';
+    }
+}
 
-$("#entrar").addEventListener("click", (ev) => {
-  ev.preventDefault();
+/*============ LOGIN ==================*/
 
-  const string = localStorage.getItem("usuario");
-  const usuarioCadastrado = JSON.parse(string);
+document.addEventListener("DOMContentLoaded", function() {
+  const $ = (elemento) => document.querySelector(elemento);
 
-  const {  senha } = usuarioCadastrado;
+  $("#kc-form-login").addEventListener("submit", function(ev) {
+      ev.preventDefault();
 
-  const dadosCorretos =
-  senha === $("#senha").value;
-  console.log(dadosCorretos);
+      const string = localStorage.getItem("usuario");
+      if (!string) {
+          alert("Usuário não cadastrado! Cadastre-se antes de fazer login.");
+          return;
+      }
 
-  if (!dadosCorretos) {
-    alert("Dados inválidos!");
-    return;
-  }
+      const usuarioCadastrado = JSON.parse(string);
+      const { senha } = usuarioCadastrado;
 
-  window.location.href = "home.html";
+      const dadosCorretos = senha === $("#password").value;
 
- 
-  
-  alert("Você está na área logada da aplicação!");
-  
-  
+      if (!dadosCorretos) {
+          alert("Senha incorreta! Verifique seus dados.");
+          return;
+      }
+
+      setTimeout(function() {
+          alert('Agora podemos ouvir Músicas!!!');
+      });
+
+      alert("Bem-vindo ao Dial");
+
+      if (localStorage.getItem("token") == null) {
+          window.location.href = "music1.html";
+      }
+  });
 });

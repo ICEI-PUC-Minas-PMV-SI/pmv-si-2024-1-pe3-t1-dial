@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="media/icon-tab.png">
+    <title>Dial - The music world</title>
+    <script src="https://kit.fontawesome.com/be8ae1a106.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/register-style.css">
+    <!-- Scroll Reveal -->
+    <script src="js/scrollreveal.min.js"></script>
+    <!-- JavaScript -->
+    <script src="js/register.js"></script>
+</head>
+<body>
+    <div class="page__container">
+        <div class="login__container">
+            <div class="form__card">
+                <header class="form__header">
+                    <a href="home.html" id="logo__link">
+                        <img src="media/dial-logo.png" id="logo" alt="">
+                    </a>
+                    <h1>Criar Conta</h1>
+                    <p>
+                        Já tem uma conta?
+                        <a href="login.html">Fazer Login</a>
+                    </p>
+                </header>
+                <div id="kc-content">
+                    <div id="kc__social">
+                        <ul>
+                            <li class="socialLoginButton">
+                                <a href="" type="button" id="social__google" class="button primary fullWidth social__button">
+                                    <div class="social-button-inner">
+                                        <img src="media/google-guideline-approved.svg" alt="">
+                                        <span>Continuar com Google</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="socialLoginButton">
+                                <a href="" type="button" id="social__apple" class="button primary fullWidth social__button">
+                                    <div class="social-button-inner">
+                                        <img src="media/apple-login.svg" alt="">
+                                        <span>Continuar com Apple</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="socialLoginDivider">
+                            <div class="socialLine"></div>
+                            <p class="socialLoginDividerText">OU</p>
+                            <div class="socialLine"></div>
+                        </div>
+                    </div>
+                    <div id="kc__form">
+                        <form action="" method="post" id="kc-form-login" class="kc-form">
+                            <div class="form__row">
+                                <div class="form-group">
+                                    <input value type="email" autocomplete="on" placeholder=" " aria-required name="username" id="username" class="input-field" required>
+                                    <label for="username" class="form-label">E-mail</label>
+                                </div>
+                            </div>
+                            <div class="form__row">
+                                <div class="form-group">
+                                    <input id="password" placeholder=" " class="input-field password" value="" name="password" type="password" autocomplete="off" aria-invalid="" aria-required="" oninput="handleRegistrationPasswordChanged()" aria-describedby="input-error-password">
+                                    <label for="username" class="form-label">Senha</label>
+                                    <button class="password-visibility-toggle" type="button" onclick="toggleShowPassword('password', 'show-password-icon', 'hide-password-icon')">
+                                        <img id="show-password-icon" class="icon" src="media/eye-primary-icon-color.svg" alt="show password">
+                                        <img id="hide-password-icon" class="icon" src="media/hidden-eye-secondary-icon-color.svg" style="display: none;" alt="hide password">
+                                    </button>
+                                    <input id="password-confirm" name="password-confirm" type="hidden" value="">
+                                </div>
+                            </div>
+                            <ul class="passwordRequeriments">
+                                <li class="passwordRequeriments-item">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path class="password-list-icon" fillrule="evenodd" clipe-rule="evenodd" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                                    No mínimo 8 caracteres
+                                </li>
+                                <li class="passwordRequeriments-item">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path class="password-list-icon" fillrule="evenodd" clipe-rule="evenodd" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                                    No mínimo um número (0-9)
+                                </li>
+                                <li class="passwordRequeriments-item">
+                                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path class="password-list-icon" fillrule="evenodd" clipe-rule="evenodd" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                                    No mínimo um caractere especial
+                                </li>
+                            </ul>
+                            <div id="kc-form-buttons" class="form__row">
+                                <button class="button primary fullWidth" name="login" id="kc-login" type="submit">
+                                    <span class="button__inner" tabindex="-1">Continuar</span>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <p class="info__text" id="social__signup">
+                        Ao criar uma conta, você concorda com nossos 
+                        <a class="target-blank" href="#" target="_blank">Termos e Condições Gerais</a>
+                         e leu e aceitou a 
+                        <a class="target-blank" href="#" target="_blank">Política de Privacidade</a>.
+                    </p>
+                    <p class="info__text" id="social__signup">
+                        Este site é protegido por reCAPTCHA, e seu uso é sujeito à 
+                        <a class="target-blank" href="#" target="_blank">Política de Privacidade</a>
+                         e aos 
+                        <a class="target-blank" href="#" target="_blank">Termos de Serviço</a>
+                        do Google.
+                    </p>
+                </div>
+            </div>
+            <div class="footer__container">
+                <div class="pickerTeam">
+                    <label>
+                        <select name="" id="">
+                            <option value="pt-br">Cabuloso Team</option>
+                            <option value="en">PucMinas</option>
+                        </select>
+                        <div>
+                            <svg width="24" height="24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="image__container">
+            <img class="artist__img" src="media/register_img.jpeg" alt="">
+            <div class="text">
+                <p>* Imagem criada por Inteligência Artificial</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
